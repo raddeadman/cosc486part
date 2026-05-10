@@ -36,7 +36,7 @@ struct MapKitDemoView: View {
             controlPanel
 
             MapReader { proxy in
-                Map(position: $position) {
+                Map(position: $position, interactionModes: currentInteractionModes) {
                     ForEach(locations) { location in
                         Marker(location.name, coordinate: location.coordinate)
                     }
@@ -50,7 +50,6 @@ struct MapKitDemoView: View {
                     }
                     .annotationTitles(.hidden)
                 }
-                .interactionModes(currentInteractionModes)
                 .onMapCameraChange(frequency: MapCameraUpdateFrequency.continuous) { _ in }
                 .mapStyle(currentMapStyle)
                 .onTapGesture { tapPosition in
