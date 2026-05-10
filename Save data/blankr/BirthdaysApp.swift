@@ -1,5 +1,5 @@
 //
-//  blankrApp.swift
+//  BirthdaysApp.swift
 //  blankr
 //
 
@@ -7,11 +7,11 @@ import SwiftData
 import SwiftUI
 
 @main
-struct blankrApp: App {
+struct BirthdaysApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(for: JournalNote.self)
+                .modelContainer(for: Friend.self)
         }
     }
 }
