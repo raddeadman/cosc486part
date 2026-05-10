@@ -50,9 +50,9 @@ struct MapKitDemoView: View {
                     }
                     .annotationTitles(.hidden)
                 }
-                .mapStyle(currentMapStyle)
                 .interactionModes(currentInteractionModes)
-                .onMapCameraChange(frequency: .continuous) { _ in }
+                .onMapCameraChange(frequency: MapCameraUpdateFrequency.continuous) { _ in }
+                .mapStyle(currentMapStyle)
                 .onTapGesture { tapPosition in
                     if let coordinate = proxy.convert(tapPosition, from: .local) {
                         lastTapDescription = String(

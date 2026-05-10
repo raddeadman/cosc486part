@@ -3,6 +3,7 @@
 //  blankr
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {

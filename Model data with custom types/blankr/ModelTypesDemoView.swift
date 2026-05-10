@@ -82,7 +82,7 @@ private struct CourseDetailView: View {
             Section("Properties") {
                 LabeledContent("ID", value: course.id)
                 LabeledContent("Title", value: course.title)
-                LabeledContent("Duration (hours)", value: "\(course.durationHours, specifier: "%g")")
+                LabeledContent("Duration (hours)", value: String(format: "%g", course.durationHours))
                 LabeledContent("Level", value: course.level.title)
             }
         }
