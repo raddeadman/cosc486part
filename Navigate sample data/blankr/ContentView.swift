@@ -3,14 +3,24 @@
 //  blankr
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigateSampleDataRootView()
+        TabView {
+            Tab("Friends", systemImage: "person.and.person") {
+                FriendList()
+            }
+
+            Tab("Movies", systemImage: "film.stack") {
+                MovieList()
+            }
+        }
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(SampleData.shared.modelContainer)
 }
